@@ -1,5 +1,5 @@
 
-
+$primary-grey-color: rgba(209, 219, 243, 0.4);
 
 * {
     margin:0;
@@ -14,6 +14,9 @@ body{
     height: 100svh;
     width: 100svw;
 }
+section{
+    margin-bottom: 12rem;
+}
 
 //todo: Heading Section
 
@@ -27,7 +30,7 @@ body{
 
     ul {
         display:flex;
-        gap:30px;
+        gap:35px;
         list-style-type: none;
         li {
             position: relative;
@@ -36,7 +39,7 @@ body{
                 position: absolute;
                 bottom: -4px; /* Aligns underline at the bottom of the text */
                 left: 0;
-                height: 2px;
+                height: 3px;
                 width: 0%; /* Initially hidden */
                 background-color: red;
                 transition: width 0.5s ease; /* Smooth width transition */
@@ -46,13 +49,14 @@ body{
             }
             a{
                 text-decoration: none;
-                font-size: calc(18rem/16);
+                font-size: calc(20rem/16);
                 color:black;
                 font-weight: 600;
             }
         }
     }
     button {
+        font-size: calc(15rem/16);
         padding: 6px 20px;
         border-radius: 12px;
         font-weight: 600;
@@ -172,6 +176,7 @@ body{
     transform: translateX(-50%);
 }
 .heading-section{
+    margin: 4rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,8 +256,8 @@ body{
     margin-top: 2rem;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0 1rem;
-    margin:10px;
+    gap: 0 2rem;
+    margin: 20px;
 }
 .journey-card {
     isolation: isolate;
@@ -264,9 +269,8 @@ body{
 .journey-card-bg{
     padding: 2rem;
     height: 200px;
-    background-color: hsl(220, 35%, 90%);
-    border-top-left-radius:20px;
-    border-top-right-radius:20px;
+    background-color: $primary-grey-color;
+    border-radius: 10px;
     position: relative;
     h4{
         position: absolute;
@@ -278,8 +282,7 @@ body{
     }
 }
 .journey-content {
-    border-top-left-radius:20px;
-    border-top-right-radius:20px;
+    border-radius: 10px;
     position: absolute;
     background-color: hsl(219, 87%, 62%);
     padding:1rem;
@@ -315,14 +318,14 @@ body{
     width:40%;
     height:100vh;
     z-index: 9;
-    background-color: rgba(223, 223, 223, 0.5);
+    background-color: rgba(223, 223, 223, 0.6);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
     align-items: flex-start;
     justify-content: flex-start;
-    .active {
+    &.active {
         display: flex !important;
     }
     li{
@@ -342,31 +345,37 @@ body{
 
 
 //todo: More about Bridge section 
+.forth{
+    margin-top: 2rem;
+    display: flex;
+    @media (max-width: 1050px){
+        // flex-wrap: wrap;
+    }
+}
 
 .forth img {
     width: 350px;
     aspect-ratio: 9/14;
-    margin-inline: 10px;
+    margin-inline: 20px;
     object-fit: cover;
     object-position: 87% 100%;
-    float:left;
 }
 
 .online-flight {
     width:100%;
     height: calc(350px/(9/14));
     overflow: hidden;
+    margin-inline: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 700px;
+    // width: 700px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     p {
         font-size: calc(18rem/16);
         color:rgb(0, 0, 0, 0.7);
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
     }
     h3 {
         font-size: calc(28rem/16);
@@ -393,8 +402,132 @@ body{
     padding:14px 0;
     left:0;
     cursor: pointer;
-    border:none; 
+    border:none;
 }
+
+section:nth-of-type(6){
+    margin-inline: 20px;
+    h2 {
+        text-align: center;
+    }
+}
+.country-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        
+    }
+}
+.card-container{
+    display: flex;
+    gap:10px;
+    background-color: $primary-grey-color;
+    border-radius: 5px;
+
+    a:nth-of-type(1) {
+        line-height: 0;
+    }
+    a:nth-of-type(2){
+        text-decoration: none;
+    }    
+    .country-card{
+        width:150px;
+        object-fit: cover;
+        object-position: center;
+        aspect-ratio: 1;
+        border-radius: 5px;       
+    }
+}
+
+//todo: rating section
+
+.rating-section {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    .rating-content{
+        background-color: $primary-grey-color;
+        padding:2rem 3rem;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3{
+            color:rgb(63, 129, 252);
+            font-size: calc(46rem/16);
+        }
+
+    }
+}
+
+//todo: footer
+
+footer {
+    // background: radial-gradient(ellipse, whitesmoke 50%, rgba(225, 230, 235, 0.4));
+    margin-top: 5rem;
+    // box-shadow: -2px -2px 12px rgb(0, 0, 0, 0.2);
+    font-weight: 300;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    font-size: calc(18rem/16);
+    .foot-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px;
+    }
+    .footer-icons {
+        display: flex;
+        gap: 15px;
+        font-size: 26px;
+        a{
+            color: rgb(70, 74, 80);
+            text-decoration: none;  
+            transition: color 0.4s ease;
+            &:hover{
+                color: hsl(219, 87%, 62%);
+            }
+        }
+    }
+}
+.subscribe-our-offers input,
+.subscribe-our-offers button {
+    width: calc(100% - 2rem);
+    padding: 6px 4px;
+    border-radius: 3px;
+    font-size: calc(18rem/16);
+
+}
+
+.subscribe-our-offers button{
+    color:whitesmoke;
+    background-color: hsl(219, 87%, 62%);
+    border:none;
+    cursor: pointer;
+    transition: 0.4s all ease;
+    &:hover{
+        background-color: rgb(38, 104, 227, 0.9);
+        text-shadow: 1px 2px 2px rgb(0, 0, 0, 0.4);
+    }
+}
+.app-logo {
+    width:100px;
+}
+
+.copyright {
+    text-align: center;
+    margin: 2rem 0;
+    word-spacing: 1px;
+    font-weight: 100;
+    font-style: italic;
+    color: rgb(0, 0, 0, 0.7);
+}
+
 
 //TODO: Responiveness with different devices
 
@@ -421,6 +554,12 @@ body{
         }
         .hideOnMobile{
             display: none;
+        }
+        .rating-section{
+            flex-wrap: wrap;
+        }
+        .footer-container {
+            grid-template-columns: 3fr 2fr;
         }
     }
 
@@ -458,4 +597,9 @@ body{
         .destination-details {
             text-align: center;
         }
+    @media (max-width: 400px){
+    .footer-container {
+        grid-template-columns: 1fr;
+        }  
     }
+}
