@@ -22,7 +22,6 @@ section {
   /* position: relative; */
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(238, 238, 238);
 }
 .container-nav nav ul {
   display: flex;
@@ -79,10 +78,10 @@ section {
 
 #logo {
   background-image: url(https://static.vecteezy.com/system/resources/previews/016/928/749/non_2x/bridge-people-logo-icon-isolated-free-vector.jpg);
-  background-color: rgb(238, 238, 238);
+  background-color: whitesmoke;
   background-position: center;
   background-size: cover;
-  width: 150px;
+  width: 140px;
   aspect-ratio: 4/4;
   background-blend-mode: multiply;
 }
@@ -112,7 +111,7 @@ section {
   background-attachment: fixed;
   background-origin: padding-box;
   z-index: 1;
-  height: 850px;
+  height: 840px;
 }
 .main-container .second-container {
   margin-left: 1rem;
@@ -130,7 +129,6 @@ section {
   color: rgba(0, 0, 0, 0.8);
 }
 .main-container #airplain {
-  mix-blend-mode: multiply;
   position: absolute;
   right: 50%;
   z-index: -2;
@@ -404,6 +402,10 @@ section:nth-of-type(6) h2 {
   text-align: center;
 }
 
+.country-card-section {
+  margin-inline: 20px;
+}
+
 .country-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -426,6 +428,9 @@ section:nth-of-type(6) h2 {
 }
 .card-container a:nth-of-type(2) {
   text-decoration: none;
+}
+.card-container a:nth-of-type(2):hover {
+  text-decoration: underline;
 }
 .card-container .country-card {
   width: 150px;
