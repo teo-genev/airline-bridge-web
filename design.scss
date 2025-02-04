@@ -9,7 +9,7 @@ $primary-grey-color: rgba(209, 219, 243, 0.4);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 body{
-    background-color: whitesmoke;
+    background-color: pur;
     overflow-x: hidden;
     height: 100svh;
     width: 100svw;
@@ -82,7 +82,7 @@ section{
 }
 #logo {
     background-image: url(https://static.vecteezy.com/system/resources/previews/016/928/749/non_2x/bridge-people-logo-icon-isolated-free-vector.jpg);
-    background-color:  whitesmoke;
+    background-color:  transparent;
     background-position: center;
     background-size: cover;
     width:140px;
@@ -147,7 +147,9 @@ section{
         
         @media (max-width: 800px){
             position:absolute;
-            display:none;
+            width: 400px;
+
+            // display:none;
         }
 
     }
@@ -351,6 +353,10 @@ section{
     @media (max-width: 1050px){
         // flex-wrap: wrap;
     }
+    @media (max-width: 850px){
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
 }
 
 .forth img {
@@ -359,6 +365,12 @@ section{
     margin-inline: 20px;
     object-fit: cover;
     object-position: 87% 100%;
+    @media(max-width: 500px) {
+        position: relative;
+        left:50%;
+        transform: translateX(-50%);
+        margin:0
+    }
 }
 
 .online-flight {
@@ -403,6 +415,9 @@ section{
     left:0;
     cursor: pointer;
     border:none;
+    @media (max-width: 850) {
+        bottom: -20px   
+    }
 }
 
 section:nth-of-type(6){
